@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class Looker : MonoBehaviour
 {
-
-    private GameObject newObject;
 	
     //public Transform newPosition;
 	//public GameObject myCube;
 	
-	void Start() {
-		
-		newObject = GameObject.Find("vrag2");
-		
-	}
     
 
     private void OnCollisionEnter(Collision collname)
@@ -22,9 +15,13 @@ public class Looker : MonoBehaviour
 	
         //Instantiate(newObject, newPosition.position, Quaternion.identity);
 		
-		GameObject cubeSpawn = (GameObject)Instantiate(newObject, new Vector3(0,2,0), transform.rotation);
+		if( collname.gameObject.name == "vrag2" || collname.gameObject.name == "vrag2(Clone)" ) {
+			
+		Instantiate(GameObject.Find("vrag2"), new Vector3(0,2,0), transform.rotation);
 
         Debug.Log ( gameObject.name );
+		
+		}
 		
 }
 
