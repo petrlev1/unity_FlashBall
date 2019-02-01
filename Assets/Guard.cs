@@ -14,6 +14,8 @@ public class Guard : MonoBehaviour
     {
 		
 		navmesh = GetComponent<NavMeshAgent>();
+		
+		player = GameObject.Find("Player");
         
     }
 
@@ -22,6 +24,8 @@ public class Guard : MonoBehaviour
     {
 		
 		navmesh.destination = player.transform.position;
+		
+		
         
     }
 }
