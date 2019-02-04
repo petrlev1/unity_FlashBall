@@ -60,10 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Guard.cs" />
-    <Compile Include="Assets\Looker.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\test.cs" />
+    <Compile Include="Assets\scripts\Doors.cs" />
+    <Compile Include="Assets\scripts\Guard.cs" />
+    <Compile Include="Assets\scripts\Looker.cs" />
+    <Compile Include="Assets\scripts\Player.cs" />
+    <Compile Include="Assets\scripts\Program.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/CloudMail/mywork/unity/RoboShips/unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
