@@ -8,13 +8,13 @@ public class Program : MonoBehaviour
 	
 	float timeLeft = 5.0f;
 	
-	private GameObject tGameOver;
+	private GameObject Canvas;
 	private GameObject Player;
 	
     void Start()
     {
 		
-		tGameOver = GameObject.Find("tGameOver");
+		Canvas = GameObject.Find("Canvas");
 		Player = GameObject.Find("Player");
 
     }
@@ -24,21 +24,38 @@ public class Program : MonoBehaviour
     {
 		
     
+	
+	
+	
+// Отсчет времени с начала игры
 	timeLeft -= Time.deltaTime;
 	
 	Debug.Log ( timeLeft );
 	
-         if(timeLeft < 0)
-         {
-             Debug.Log ( "YOU WIN !" );
-         }
+         if(timeLeft < 0) { Debug.Log ( "YOU WIN !" ); }
 		 
+		 
+		 
+		 
+		 
+	//Вылет за сцену - проигрыш	 
 		 if ( Player.transform.position.y < 0  ) {
-			
-			tGameOver.GetComponent<Canvas>().enabled = true;
+			Canvas.GetComponent<Canvas>().enabled = true;
 			Debug.Log ( "GAME OVER" );
 		}
 		
         
     }
+	
+	
+	// Перезагрузка игры
+	
+	public void ReloadGame () 
+	{ 
+             Application.LoadLevel(0); 
+			 
+	}
+	
+
+
 }
