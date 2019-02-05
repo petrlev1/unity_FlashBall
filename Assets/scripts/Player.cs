@@ -32,11 +32,7 @@ if (Input.GetKey(KeyCode.RightArrow))
             rb.AddForce(Vector3.right * 20);
 		
 		
-		// Вычисление проигрыша
-		if ( transform.position.y < 0  ) {
-			
-			Debug.Log ( "GAME OVER" );
-		}
+		
         
     }
 }

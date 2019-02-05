@@ -1,21 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Program : MonoBehaviour
 {
     // Start is called before the first frame update
 	
-	float timeLeft = 5.0f;
+	float timeLeft = 120f;
 	
-	private GameObject Canvas;
+	private GameObject canGameOver;
+	private GameObject canWin;
+	private GameObject timer;
 	private GameObject Player;
+	Text timerText;
 	
     void Start()
     {
 		
-		Canvas = GameObject.Find("Canvas");
+		canGameOver = GameObject.Find("canGameOver");
+		canWin = GameObject.Find("canWin");
+		timer = GameObject.Find("timer");
 		Player = GameObject.Find("Player");
+		
+		timerText = timer.GetComponent<Text>();
+		
+		
 
     }
 
@@ -24,24 +34,33 @@ public class Program : MonoBehaviour
     {
 		
     
-	
-	
+
 	
 // Отсчет времени с начала игры
 	timeLeft -= Time.deltaTime;
 	
-	Debug.Log ( timeLeft );
-	
-         if(timeLeft < 0) { Debug.Log ( "YOU WIN !" ); }
+	//Debug.Log ( timeLeft );
+
+		 //Выводим секундомер на экран
+		 timerText.text = timeLeft.ToString();
 		 
+		 if( timeLeft < 0 ) { 
+		 //Debug.Log ( "YOU WIN !" ); 
+		 canWin.GetComponent<Canvas>().enabled = true;
+		 Player.SetActive(false);
+		 timer.SetActive(false);
+		 }
 		 
 		 
 		 
 		 
 	//Вылет за сцену - проигрыш	 
-		 if ( Player.transform.position.y < 0  ) {
-			Canvas.GetComponent<Canvas>().enabled = true;
-			Debug.Log ( "GAME OVER" );
+		 if ( Player.transform.position.y < -1  ) {
+			canGameOver.GetComponent<Canvas>().enabled = true;
+			//Debug.Log ( "GAME OVER" );
+			timeLeft = 5;
+			Player.SetActive(false);
+			timer.SetActive(false);
 		}
 		
         
