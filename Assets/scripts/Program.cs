@@ -7,7 +7,8 @@ public class Program : MonoBehaviour
 {
     // Start is called before the first frame update
 	
-	float timeLeft = 120f;
+	//Время отсчета
+	float timeLeft = 1160f;
 	
 	private GameObject canGameOver;
 	private GameObject canWin;

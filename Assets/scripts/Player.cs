@@ -32,7 +32,6 @@ if (Input.GetKey(KeyCode.RightArrow))
             rb.AddForce(Vector3.right * 20);
 		
 		
-		
         
     }
 }
