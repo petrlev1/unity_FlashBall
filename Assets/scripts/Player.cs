@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 	
 	private Rigidbody rb;
 	
-	public float Speed = 10.0f;
+	public float Speed = 20.0f;
 	
     // Start is called before the first frame update
     void Start()
@@ -30,14 +30,14 @@ public class Player : MonoBehaviour
 		rb.AddForce(Vector3.forward*CrossPlatformInputManager.GetAxis("Vertical") * Speed );
 		
 		// Клавиатура Rigidbody
-/* if (Input.GetKey(KeyCode.UpArrow))
+if (Input.GetKey(KeyCode.UpArrow))
             rb.AddForce(Vector3.forward * 20);
 if (Input.GetKey(KeyCode.DownArrow))
             rb.AddForce(Vector3.back * 20);
 if (Input.GetKey(KeyCode.LeftArrow))
             rb.AddForce(Vector3.left * 20);
 if (Input.GetKey(KeyCode.RightArrow))
-            rb.AddForce(Vector3.right * 20); */
+            rb.AddForce(Vector3.right * 20);
 		
 		//Клавиатура - без Rigidbody
 		 //transform.Translate(Vector3.forward*Input.GetAxis("Vertical")*Speed.x*Time.deltaTime);
