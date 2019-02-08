@@ -8,7 +8,7 @@ public class Program : MonoBehaviour
     // Start is called before the first frame update
 	
 	//Время отсчета
-	float timeLeft = 60f;
+	float timeLeft = 0f;
 	
 	private GameObject canGameOver;
 	private GameObject canWin;
@@ -38,7 +38,7 @@ public class Program : MonoBehaviour
 
 	
 // Отсчет времени с начала игры
-	timeLeft -= Time.deltaTime;
+	timeLeft += Time.deltaTime;
 	
 	//Debug.Log ( timeLeft );
 
@@ -56,7 +56,7 @@ public class Program : MonoBehaviour
 		 
 		 
 	//Вылет за сцену - проигрыш	 
-		 if ( Player.transform.position.y < -1  ) {
+		 if ( Player.transform.position.y < -10  ) {
 			canGameOver.GetComponent<Canvas>().enabled = true;
 			//Debug.Log ( "GAME OVER" );
 			timeLeft = 5;

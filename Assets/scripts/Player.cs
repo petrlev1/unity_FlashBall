@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 	
 	private Rigidbody rb;
 	
-	public float Speed = 20.0f;
+	private float Speed = 20.0f;
 	
     // Start is called before the first frame update
     void Start()
