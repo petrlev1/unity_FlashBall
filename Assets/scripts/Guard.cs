@@ -24,8 +24,6 @@ public class Guard : MonoBehaviour
     {
 		
 		navmesh.destination = player.transform.position;
-		
-		
-        
+
     }
 }

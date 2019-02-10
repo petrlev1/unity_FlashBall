@@ -34,9 +34,6 @@ public class Program : MonoBehaviour
     void Update()
     {
 		
-    
-
-	
 // Отсчет времени с начала игры
 	timeLeft += Time.deltaTime;
 	
@@ -68,13 +65,7 @@ public class Program : MonoBehaviour
     }
 	
 	
-	// Перезагрузка игры
 	
-	public void ReloadGame () 
-	{ 
-             Application.LoadLevel(0); 
-			 
-	}
 	
 
 
