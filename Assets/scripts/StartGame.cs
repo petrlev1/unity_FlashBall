@@ -7,25 +7,21 @@ using UnityEngine.AI;
 public class StartGame : MonoBehaviour
 {
    
-   private GameObject Player;
-   //private GameObject Vragi;
    private GameObject DualTouchControls;
    private NavMeshAgent vrag2NavMeshAgent;
    public GameObject[] VragiList;
    private GameObject canMainInt;
    
-   //private test1Shadow;
-   //private GameObject CanStart;
-   
    
     void Start()
-    {
+    {	
+		//timer = GameObject.Find("timer");
 		
 		canMainInt = GameObject.Find("canMainInt");
 		canMainInt.SetActive(false);
 		
-		Player = GameObject.Find("Player");
-		Player.SetActive(false);
+		//Player = GameObject.Find("Player");
+		Global.Player.SetActive(false);
 		
 		//Vragi = GameObject.Find("vrag2");
 		//Vragi.SetActive(false);
@@ -50,23 +46,22 @@ public class StartGame : MonoBehaviour
     
     void Update()
     {
-
-	
-		//vrag2NavMeshAgent.destination = Player.transform.position;
 		
-		//foreach ( GameObject vrag in vragList ) { vrag.SetActive(false); }
 		
         
     }
 	
 	public void StartGameAll()
 	{
-	Player.SetActive(true);
+	
+	
+	Global.Player.SetActive(true);
 			 
 			 foreach ( GameObject vrag in VragiList ) { vrag.SetActive(true); }
 			 canMainInt.SetActive(true);
 			 GetComponent<Canvas>().enabled = false;
-			 DualTouchControls.SetActive(true);	
+			 DualTouchControls.SetActive(true);
+			 Global.timer.SetActive(true);
 	}
 	
 	

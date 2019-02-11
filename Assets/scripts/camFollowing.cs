@@ -24,4 +24,6 @@ private Vector3 offset;
 		transform.position = player.transform.position + offset;
         
     }
+
+	
 }

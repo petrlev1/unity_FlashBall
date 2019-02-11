@@ -5,8 +5,7 @@ using UnityEngine.AI;
 
 public class Guard : MonoBehaviour
 {
-	
-   private GameObject player;
+
    private NavMeshAgent navmesh;
 
     // Start is called before the first frame update
@@ -14,8 +13,6 @@ public class Guard : MonoBehaviour
     {
 		
 		navmesh = GetComponent<NavMeshAgent>();
-		
-		player = GameObject.Find("Player");
         
     }
 
@@ -23,7 +20,19 @@ public class Guard : MonoBehaviour
     void Update()
     {
 		
-		navmesh.destination = player.transform.position;
+		navmesh.destination = Global.Player.transform.position;
 
     }
+	
+	//Столкновение и появление врага;
+	private void OnCollisionEnter(Collision collname)
+{
+	
+		if( collname.gameObject.name == "Player" ) {
+		Instantiate(GameObject.Find("vrag2"), new Vector3(0,2,0), transform.rotation);
+		
+		}
+		
+}
+		
 }

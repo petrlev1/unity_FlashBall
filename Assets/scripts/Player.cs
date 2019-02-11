@@ -7,21 +7,33 @@ public class Player : MonoBehaviour
 
 {
 	
+	//private GameObject Player;
 	private Rigidbody rb;
 	
 	private float Speed = 20.0f;
+	private GameObject canGameOver;
+	private GameObject timer;
 	
     // Start is called before the first frame update
     void Start()
     {
 		
 	rb = GetComponent<Rigidbody>();
+	
+	canGameOver = GameObject.Find("canGameOver");
+	timer = GameObject.Find("timer");
+	
+	//Debug.Log ( transform.position.y );
         
     }
 
     // Update is called once per frame
     void Update()
     {
+		/* if ( transform.position.y < -10  ) {
+		canGameOver.GetComponent<Canvas>().enabled = true;
+		timer.SetActive(false);
+		} */
 		
 		// Управление
 
