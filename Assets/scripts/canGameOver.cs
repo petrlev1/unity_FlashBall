@@ -6,13 +6,10 @@ using UnityEngine.UI;
 public class canGameOver : MonoBehaviour
 {
 	
-	
 	void Start()
 	
 	{
 	
-	//Global.timer = GameObject.Find("timer");
-	//Global.Player = GameObject.Find("Player");
 	
 	}
 	
@@ -24,8 +21,8 @@ public class canGameOver : MonoBehaviour
 		Global.timer.SetActive(false);
 		Global.Player.SetActive(false);
 		//Debug.Log ( "GAME OVER" );
-		}
 		
+		}
 		
 		
 	}

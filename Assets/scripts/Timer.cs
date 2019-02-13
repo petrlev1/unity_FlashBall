@@ -10,6 +10,10 @@ public class Timer : MonoBehaviour
 	Text timerText;
 	private GameObject tYouScore;
 	Text tYouScoreText;
+	public float scoreNum;
+	public float scoreNum2;
+	private GameObject tNewRecord;
+	//Text tNewRecordText;
 	
     void Start()
     {
@@ -17,6 +21,18 @@ public class Timer : MonoBehaviour
 		tYouScore = GameObject.Find("tYouScore");
 	    tYouScoreText = tYouScore.GetComponent<Text>();
 		timerText = GetComponent<Text>();
+		
+		tNewRecord = GameObject.Find("tYouScore");
+		
+		//переменная с сохраненным временем
+		scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
+		//Debug.Log ( scoreNum );
+		
+		
+		tNewRecord = GameObject.Find("tNewRecord");
+		//tNewRecordText = tNewRecord.GetComponent<Text>();
+		
+		
         
     }
 
@@ -27,14 +43,28 @@ public class Timer : MonoBehaviour
 		timeLeft += Time.deltaTime;
 		timerText.text = timeLeft.ToString();
 		//Debug.Log ( timeLeft.ToString() );
-		 
     }
 	
 	
 	//Выводит достигнутое время
 	void OnDisable()
 	{
+		
 		tYouScoreText.text = timeLeft.ToString();
+		
+		//Если новое время больше - выводим и сохраняем новое
+		if ( timeLeft > scoreNum ) { 
+		
+		PlayerPrefs.SetFloat("scoreNumKey", timeLeft);
+	    //Debug.Log(timeLeft);
+		
+		//включение строки о новом рекорде
+		tNewRecord.GetComponent<Text>().enabled = true;
+
+		}
+		
+		
+		
 	}
 	
 	/* public static Timer1()
