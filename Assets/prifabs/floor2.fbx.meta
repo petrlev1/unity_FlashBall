@@ -4,12 +4,29 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Camera
+    100004: floor2
+    100006: Lamp
     400000: //RootNode
+    400002: Camera
+    400004: floor2
+    400006: Lamp
+    2000000: Camera
     2100000: No Name
     2300000: //RootNode
+    2300002: floor2
     3300000: //RootNode
+    3300002: floor2
     4300000: floor
-  externalObjects: {}
+    4300002: Cylinder.001
+    4300004: floor2
+    10800000: Lamp
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: a358ab68dadf96d4382153c0148b3b86, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

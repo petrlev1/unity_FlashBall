@@ -10,8 +10,8 @@ public class Timer : MonoBehaviour
 	Text timerText;
 	private GameObject tYouScore;
 	Text tYouScoreText;
-	public float scoreNum;
-	public float scoreNum2;
+	private float scoreNum;
+	private float scoreNum2;
 	private GameObject tNewRecord;
 	//Text tNewRecordText;
 	
