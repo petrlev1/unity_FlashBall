@@ -10,9 +10,10 @@ public class Player : MonoBehaviour
 	//private GameObject Player;
 	private Rigidbody rb;
 	
-	private float Speed = 20.0f;
+	public float Speed = 20.0f;
 	private GameObject canGameOver;
 	private GameObject timer;
+	//private GameObject test1;
 	
     // Start is called before the first frame update
     void Start()
@@ -23,23 +24,31 @@ public class Player : MonoBehaviour
 	canGameOver = GameObject.Find("canGameOver");
 	timer = GameObject.Find("timer");
 	
-	//Debug.Log ( transform.position.y );
-        
+	//test1 = GameObject.Find("test1");
+	  
     }
+	
 
     // Update is called once per frame
     void Update()
     {
-		/* if ( transform.position.y < -10  ) {
-		canGameOver.GetComponent<Canvas>().enabled = true;
-		timer.SetActive(false);
-		} */
+		
+		//Позиция тачпада
+		//Touch touch = Input.GetTouch(0);
+		//Debug.Log ( touch.position );
+		
+		//Позиция игрока
+		//Debug.Log ( transform.position );
+		
+		
 		
 		// Управление
 
 		// Джойстик
 		rb.AddForce(Vector3.right*CrossPlatformInputManager.GetAxis("Horizontal") * Speed );
 		rb.AddForce(Vector3.forward*CrossPlatformInputManager.GetAxis("Vertical") * Speed );
+		
+		//Debug.Log ( Speed );
 		
 		// Клавиатура Rigidbody
 if (Input.GetKey(KeyCode.UpArrow))

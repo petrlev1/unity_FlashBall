@@ -69,6 +69,7 @@
     <Compile Include="Assets\scripts\Program.cs" />
     <Compile Include="Assets\scripts\StartGame.cs" />
     <Compile Include="Assets\scripts\Timer.cs" />
+    <Compile Include="Assets\scripts\TuchLine.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/CloudMail/mywork/unity/RoboShips/unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

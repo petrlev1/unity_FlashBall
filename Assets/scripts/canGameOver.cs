@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class canGameOver : MonoBehaviour
 {
 	
-	public float scoreNum;
+	//public float scoreNum;
 	
 	void Start()
 	
 	{
 	
-	scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
-	Debug.Log ( scoreNum );
+	//scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
+	//Debug.Log ( scoreNum );
 	
 	}
 	

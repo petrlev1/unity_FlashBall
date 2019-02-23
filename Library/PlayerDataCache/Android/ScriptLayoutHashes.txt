@@ -1,9 +1,10 @@
 Android
 PlayerPath?
-C:/CloudMail/mywork/unity/RoboShips/FireBall.apk
+C:/CloudMail/mywork/unity/RoboShips/opt/FireBall.apk
 SceneListBegin?
 Assets/Scenes/100.unity
 SceneListEnd?
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Timer
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -120,11 +121,14 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Guard
 94017dcc9f00fe671ea7dc427b4da011 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
+34e0d10bbf8c2b48af47f2067e5f705d Assembly-CSharp.dll:.TuchLine
 a8b6c919b2049fcc280823488144371f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.Joystick
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Globals
 4bd1cc3c85989d2213a9a8fd9d09e63f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.InputAxisScrollbar
 fdd7177da17032ba94d98037cc97bb49 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.AxisTouchButton
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 c88c4199b288356ec3eb2f0d85abc619 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.ButtonHandler
+5688cf71b8eeaa2e0e60a58ac83e3c9c Assembly-CSharp.dll:.StartGame
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.MobileControlRig
@@ -163,10 +167,10 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 13f8f373b951cbaf0f891949929b196a Assembly-CSharp.dll:.Player
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.canGameOver
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 219ec6059796d8951d2adcd8505d0dc2 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Looker
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
