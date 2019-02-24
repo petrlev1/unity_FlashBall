@@ -3220,6 +3220,16 @@ PrefabInstance:
       propertyPath: Speed
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8556926310333251114, guid: 283985c340ad30d4794f7e88416a886f,
+        type: 3}
+      propertyPath: acceleration
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556926310333251114, guid: 283985c340ad30d4794f7e88416a886f,
+        type: 3}
+      propertyPath: force
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8556926310333251118, guid: 283985c340ad30d4794f7e88416a886f,
         type: 3}
       propertyPath: m_Enabled

@@ -15,7 +15,10 @@ public class Player : MonoBehaviour
 	private GameObject timer;
 	//private GameObject test1;
 	
-    // Start is called before the first frame update
+	public int acceleration;
+    public float force = 10.0f;
+	
+
     void Start()
     {
 		
@@ -42,9 +45,31 @@ public class Player : MonoBehaviour
 		
 		
 		
+		
 		// Управление
+		
+		//Акселерометр
+	
+ Vector3 dir = Vector3.zero;
+            dir.x = Input.acceleration.x;
+            dir.z = Input.acceleration.y;
+			Debug.Log ( dir.z );
 
-		// Джойстик
+			//Корректировка чувствительности наклона по y
+			if (dir.z > -0.57f ) { 
+			dir.z = dir.z + 0.8f;
+			}
+
+			
+            if (dir.sqrMagnitude > 1) dir.Normalize();
+            dir *= Time.deltaTime;
+			GetComponent<Rigidbody>().AddForce( (dir.x*force)*acceleration, 0, (dir.z * force) * acceleration, ForceMode.Force);
+			
+			//Debug.Log ( dir.x );
+	        
+	
+
+		// Джойстик (MoveTouchpad)
 		rb.AddForce(Vector3.right*CrossPlatformInputManager.GetAxis("Horizontal") * Speed );
 		rb.AddForce(Vector3.forward*CrossPlatformInputManager.GetAxis("Vertical") * Speed );
 		
