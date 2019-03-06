@@ -8,6 +8,7 @@ public class Global
 	public static GameObject Player;
 	public static float timeLeft = 0f;
 	public static GameObject canSetting;
+	public static GameObject DualTouchControls;
 	
 }
 
@@ -20,6 +21,7 @@ public class Globals : MonoBehaviour
 		Global.timer = GameObject.Find("timer");
 		Global.Player = GameObject.Find("Player");
 		Global.canSetting = GameObject.Find("canSetting");
+		Global.DualTouchControls = GameObject.Find("DualTouchControls");
         
     }
 

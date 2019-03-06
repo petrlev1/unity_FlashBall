@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 	Text timerText;
 	private GameObject tYouScore;
 	Text tYouScoreText;
-	private float scoreNum;
+	public float scoreNum;
 	private float scoreNum2;
 	private GameObject tNewRecord;
 	//Text tNewRecordText;
@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
 		
 		//переменная с сохраненным временем
 		scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
-		//Debug.Log ( scoreNum );
+		Debug.Log ( scoreNum );
 		
 		
 		tNewRecord = GameObject.Find("tNewRecord");

@@ -12,6 +12,7 @@ public class PlayerControl_Tuch : MonoBehaviour
     void Start()
     {
 		
+		Global.DualTouchControls.GetComponent<Canvas>().enabled = true;
 		rb = GetComponent<Rigidbody>();
         
     }

@@ -1786,7 +1786,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2080,6 +2080,18 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 22400000, guid: 2169821f0567671499a5c10104c69c24, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22400000, guid: 2169821f0567671499a5c10104c69c24, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22400000, guid: 2169821f0567671499a5c10104c69c24, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 2169821f0567671499a5c10104c69c24, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2114,7 +2126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22400010, guid: 2169821f0567671499a5c10104c69c24, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.22
+      value: 0.22000122
       objectReference: {fileID: 0}
     - target: {fileID: 22400010, guid: 2169821f0567671499a5c10104c69c24, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2212,6 +2224,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 22300000, guid: 2169821f0567671499a5c10104c69c24, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22300000, guid: 2169821f0567671499a5c10104c69c24, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 534669904}
     - target: {fileID: 22400002, guid: 2169821f0567671499a5c10104c69c24, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000015258789
@@ -2219,6 +2239,10 @@ PrefabInstance:
     - target: {fileID: 22400002, guid: 2169821f0567671499a5c10104c69c24, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 2169821f0567671499a5c10104c69c24, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2169821f0567671499a5c10104c69c24, type: 3}
@@ -2774,7 +2798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1348539470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2821,7 +2845,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348539469}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}

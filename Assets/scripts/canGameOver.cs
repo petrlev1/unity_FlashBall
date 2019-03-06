@@ -34,7 +34,9 @@ public class canGameOver : MonoBehaviour
 	public void ReloadGame () 
 	{ 
 	
-             Application.LoadLevel(0); 
+             Application.LoadLevel(0);
+			 //Global.DualTouchControls.SetActive(false);
+			 
 			 
 	}
 	

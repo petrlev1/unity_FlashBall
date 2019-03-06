@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class StartGame : MonoBehaviour
 {
    
-   private GameObject DualTouchControls;
+   //private GameObject DualTouchControls;
    private NavMeshAgent vrag2NavMeshAgent;
    public GameObject[] VragiList;
    private GameObject canMainInt;
@@ -41,13 +41,13 @@ public class StartGame : MonoBehaviour
 		vrag.SetActive(false);
 		}
 		
-		DualTouchControls = GameObject.Find("DualTouchControls");
-		//DualTouchControls.SetActive(false);
+		//DualTouchControls = GameObject.Find("DualTouchControls");
+		//Global.DualTouchControls.GetComponent<Canvas>().enabled = false;
 
     //x.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
 	//x.SetActive(false);
 	//Debug.Log ( t1.name );
-	
+	gameObject.GetComponent<Canvas>().enabled = true;
 	
 	  
     }
@@ -67,7 +67,7 @@ public class StartGame : MonoBehaviour
 			 foreach ( GameObject vrag in VragiList ) { vrag.SetActive(true); }
 			 //canMainInt.SetActive(true);
 			 //GetComponent<Canvas>().enabled = false;
-			 gameObject.SetActive(false);
+			 gameObject.GetComponent<Canvas>().enabled = false;
 			 //DualTouchControls.SetActive(true);
 			 Global.timer.SetActive(true);
 			 TuchLine.SetActive(true);
