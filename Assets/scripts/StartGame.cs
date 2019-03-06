@@ -11,6 +11,7 @@ public class StartGame : MonoBehaviour
    private NavMeshAgent vrag2NavMeshAgent;
    public GameObject[] VragiList;
    private GameObject canMainInt;
+   private GameObject TuchLine;
    
    
     void Start()
@@ -18,10 +19,17 @@ public class StartGame : MonoBehaviour
 		//timer = GameObject.Find("timer");
 		
 		canMainInt = GameObject.Find("canMainInt");
-		canMainInt.SetActive(false);
+		//canMainInt.SetActive(false);
+		
+		Global.timer.SetActive(false);
 		
 		//Player = GameObject.Find("Player");
 		Global.Player.SetActive(false);
+		
+		TuchLine = GameObject.Find("TuchLine");
+		TuchLine.SetActive(false);
+		
+		//Global.canSetting.SetActive(false);
 		
 		//Vragi = GameObject.Find("vrag2");
 		//Vragi.SetActive(false);
@@ -34,11 +42,12 @@ public class StartGame : MonoBehaviour
 		}
 		
 		DualTouchControls = GameObject.Find("DualTouchControls");
-		DualTouchControls.SetActive(false);
+		//DualTouchControls.SetActive(false);
 
     //x.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
 	//x.SetActive(false);
 	//Debug.Log ( t1.name );
+	
 	
 	  
     }
@@ -53,15 +62,15 @@ public class StartGame : MonoBehaviour
 	
 	public void StartGameAll()
 	{
-	
-	
 	Global.Player.SetActive(true);
 			 
 			 foreach ( GameObject vrag in VragiList ) { vrag.SetActive(true); }
-			 canMainInt.SetActive(true);
-			 GetComponent<Canvas>().enabled = false;
-			 DualTouchControls.SetActive(true);
+			 //canMainInt.SetActive(true);
+			 //GetComponent<Canvas>().enabled = false;
+			 gameObject.SetActive(false);
+			 //DualTouchControls.SetActive(true);
 			 Global.timer.SetActive(true);
+			 TuchLine.SetActive(true);
 	}
 	
 	
