@@ -26,7 +26,7 @@ public class Timer : MonoBehaviour
 		
 		//переменная с сохраненным временем
 		scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
-		Debug.Log ( scoreNum );
+		//Debug.Log ( scoreNum );
 		
 		
 		tNewRecord = GameObject.Find("tNewRecord");
