@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class canGameOver : MonoBehaviour
 {
 	
-	//public float scoreNum;
+	private GameObject canWin;
 	
 	void Start()
 	
 	{
+		canWin = GameObject.Find("canWin");
 	
 	//scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
 	//Debug.Log ( scoreNum );
@@ -24,9 +25,11 @@ public class canGameOver : MonoBehaviour
 		GetComponent<Canvas>().enabled = true;
 		Global.timer.SetActive(false);
 		Global.Player.SetActive(false);
+		canWin.SetActive(false);
 		
 		}
 		
+	
 		
 	}
 	

@@ -9,14 +9,16 @@ public class StartGame : MonoBehaviour
    
    //private GameObject DualTouchControls;
    private NavMeshAgent vrag2NavMeshAgent;
-   public GameObject[] VragiList;
+   private GameObject[] VragiList;
    private GameObject canMainInt;
    private GameObject TuchLine;
+   private GameObject vrag2;
    
    
     void Start()
     {	
 		//timer = GameObject.Find("timer");
+		
 		
 		canMainInt = GameObject.Find("canMainInt");
 		//canMainInt.SetActive(false);
@@ -37,37 +39,49 @@ public class StartGame : MonoBehaviour
 		//VragiList[0].SetActive(false);
 		//VragiList[1].SetActive(false);
 		
-		foreach ( GameObject vrag in VragiList ) { 
-		vrag.SetActive(false);
-		}
+		//VragiList = GameObject[].Find("vrag2");
 		
-		//DualTouchControls = GameObject.Find("DualTouchControls");
-		//Global.DualTouchControls.GetComponent<Canvas>().enabled = false;
+	
+       VragiList = GameObject.FindGameObjectsWithTag("vragTag");
 
-    //x.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-	//x.SetActive(false);
-	//Debug.Log ( t1.name );
+//Выключаем врагов
+foreach(GameObject vrag in GameObject.FindGameObjectsWithTag("vragTag"))
+{
+    vrag.SetActive(false);
+}
+	
+		/* foreach ( GameObject vrag in VragiList ) { 
+		vrag.SetActive(false);
+		} */
+		
+		
 	gameObject.GetComponent<Canvas>().enabled = true;
 	
 	  
     }
 
     
-    void Update()
-    {
-		
-		
-        
-    }
+	
 	
 	public void StartGameAll()
 	{
+		
 	Global.Player.SetActive(true);
 			 
-			 foreach ( GameObject vrag in VragiList ) { vrag.SetActive(true); }
+			 /* foreach(GameObject vrag in GameObject.FindGameObjectsWithTag("vragTag"))
+{
+    vrag.SetActive(true);
+} */
+
+foreach ( GameObject vrag in VragiList ) { 
+		vrag.SetActive(true);
+		}
+		
+//Debug.Log ( "test" );
 			 //canMainInt.SetActive(true);
 			 //GetComponent<Canvas>().enabled = false;
-			 gameObject.GetComponent<Canvas>().enabled = false;
+			 //gameObject.GetComponent<Canvas>().enabled = false;
+			 gameObject.SetActive(false);
 			 //DualTouchControls.SetActive(true);
 			 Global.timer.SetActive(true);
 			 TuchLine.SetActive(true);
@@ -84,7 +98,7 @@ public class StartGame : MonoBehaviour
 	StartGameAll();	 
 	}
 	
-	
+	 
 	public void StartGameMiddle()
 	{ 
 	foreach ( GameObject vrag in VragiList ) {
