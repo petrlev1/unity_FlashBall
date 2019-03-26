@@ -8,6 +8,7 @@ public class Guard : MonoBehaviour
 
    private NavMeshAgent navmesh;
    private GameObject border1;
+   public Vector3 GuardPos;
    //private GameObject vrag2a;
    //private GameObject vrag2Clone;
    //private GameObject[] VragiList;
@@ -18,6 +19,9 @@ public class Guard : MonoBehaviour
 		
 		navmesh = GetComponent<NavMeshAgent>();
 		border1 = GameObject.Find("border1");
+		
+		
+		Debug.Log ( this.transform.position );
 		
 		//vrag2a = GameObject.Find("vrag2a");
 		
@@ -71,6 +75,9 @@ public class Guard : MonoBehaviour
 	   
 		//Renderer vrag2CloneRend = vrag2Clone.GetComponent<Renderer>();
 		//vrag2CloneRend.material.SetColor("_Color", Color.green);
+		
+		//Позиция врага
+		GuardPos = this.transform.position;
 
     }
 	
@@ -84,9 +91,9 @@ public class Guard : MonoBehaviour
 			//vrag2a.GetComponent<Renderer>().enabled = true;
 			
 			//Дублирование нового врага
-		Instantiate(GameObject.Find("vrag2"), new Vector3(0,2,0), transform.rotation);
+		Instantiate(GameObject.Find("vrag2"), GuardPos, transform.rotation);
 		
-		//Debug.Log ( "COOL" );
+		//Debug.Log ( Global.Player.transform.position );
 		}
 		
 		//отключение преследования
