@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 	private Rigidbody rb;
 	public int jumpForce = 100;
 	
+	private float Speed;
+	
 	//public int acceleration;
     //public float force = 10.0f;
 
@@ -19,23 +21,19 @@ public class Player : MonoBehaviour
 		
 	rb = GetComponent<Rigidbody>();
 	
-	
 	  
     }
 	
 
     
-    /* void Update()
+     void Update()
     {
 		
-		//Позиция тачпада
-		//Touch touch = Input.GetTouch(0);
-		//Debug.Log ( touch.position );
-		
-		//Позиция игрока
-		//Debug.Log ( transform.position );
+		//Vector3 v3Velocity = rb.velocity;
+		Speed = rb.velocity.magnitude;
+		Debug.Log ( "my: " + Speed );
         
-    } */
+    } 
 	
 	/* void OnCollisionStay()
          {

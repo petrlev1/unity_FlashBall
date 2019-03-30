@@ -8,7 +8,10 @@ public class Guard : MonoBehaviour
 
    private NavMeshAgent navmesh;
    private GameObject border1;
-   public Vector3 GuardPos;
+   private Vector3 GuardPos;
+   private Rigidbody rb;
+   private float Speed;
+   //private Vector3 v3Velocity;
    //private GameObject vrag2a;
    //private GameObject vrag2Clone;
    //private GameObject[] VragiList;
@@ -19,9 +22,7 @@ public class Guard : MonoBehaviour
 		
 		navmesh = GetComponent<NavMeshAgent>();
 		border1 = GameObject.Find("border1");
-		
-		
-		Debug.Log ( this.transform.position );
+		rb = GetComponent<Rigidbody>();
 		
 		//vrag2a = GameObject.Find("vrag2a");
 		
@@ -63,6 +64,10 @@ public class Guard : MonoBehaviour
     void Update()
     {
 		
+		//Rigidbody rb = GetComponent<Rigidbody>();
+		//Vector3 v3Velocity = rb.velocity;
+		//Debug.Log ( v3Velocity );
+		
 		//Установление цели
 		navmesh.destination = Global.Player.transform.position;
 		
@@ -78,6 +83,9 @@ public class Guard : MonoBehaviour
 		
 		//Позиция врага
 		GuardPos = this.transform.position;
+		
+		Speed = rb.velocity.magnitude;
+		Debug.Log ( Speed );
 
     }
 	
@@ -97,7 +105,7 @@ public class Guard : MonoBehaviour
 		}
 		
 		//отключение преследования
-		if( collname.gameObject.name == "border1" ) {
+		if( collname.gameObject.name == "border1" && Speed > Global.vragSpeed ) {
 		
 		navmesh.enabled = false;
 		//Debug.Log ( "COOL" );

@@ -9,6 +9,7 @@ public class Global
 	public static GameObject[] VragList;
 	public static GameObject Vrag;
 	public static GameObject VragClone;
+	public static float vragSpeed = 5f;
 	public static float timeLeft = 0f;
 	public static GameObject canSetting;
 	public static GameObject CanStart;
