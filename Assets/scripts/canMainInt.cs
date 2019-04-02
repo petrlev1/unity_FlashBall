@@ -9,6 +9,7 @@ public class canMainInt : MonoBehaviour
     void Start()
     {
         
+		
         
     }
 
@@ -16,6 +17,9 @@ public class canMainInt : MonoBehaviour
     void Update()
     {
 		
+		
+//Debug.Log ( "Red: " + Global.VragList.Length );
+//Debug.Log ( "Clone: " + Global.VragListClone.Length );
         
     }
 	
@@ -23,7 +27,7 @@ public class canMainInt : MonoBehaviour
 	public void butSetting () 
 	{ 
 	
-	     //Global.canSetting.SetActive(true);
+	     Global.canSetting.SetActive(true);
 		 Global.canSetting.GetComponent<Canvas>().enabled = true;
 		 
 		 Time.timeScale = 0;

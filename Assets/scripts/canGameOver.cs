@@ -12,6 +12,7 @@ public class canGameOver : MonoBehaviour
 	
 	{
 		canWin = GameObject.Find("canWin");
+		Global.canMainInt.SetActive(false);
 	
 	//scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
 	//Debug.Log ( scoreNum );
@@ -37,9 +38,9 @@ public class canGameOver : MonoBehaviour
 	public void ReloadGame () 
 	{ 
 	
-             Application.LoadLevel(1);
-			 //Global.DualTouchControls.SetActive(false);
-			 
+             Application.LoadLevel(0);
+			 //Global.canMainInt.SetActive(true);
+			 //Global.DualTouchControls.SetActive(false);	 
 			 
 	}
 	

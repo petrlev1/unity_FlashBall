@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 		
 		//Vector3 v3Velocity = rb.velocity;
 		Speed = rb.velocity.magnitude;
-		Debug.Log ( "my: " + Speed );
+		//Debug.Log ( "my: " + Speed );
         
     } 
 	

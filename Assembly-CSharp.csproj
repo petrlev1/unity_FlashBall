@@ -67,6 +67,7 @@
     <Compile Include="Assets\scripts\canWin.cs" />
     <Compile Include="Assets\scripts\Doors.cs" />
     <Compile Include="Assets\scripts\Globals.cs" />
+    <Compile Include="Assets\scripts\greenVragText.cs" />
     <Compile Include="Assets\scripts\Guard.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\PlayerControl_Akcel.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Assets\scripts\PlayerControl_Tuch.cs" />
     <Compile Include="Assets\scripts\PlayerJump.cs" />
     <Compile Include="Assets\scripts\Program.cs" />
+    <Compile Include="Assets\scripts\redVragText.cs" />
     <Compile Include="Assets\scripts\StartGame.cs" />
     <Compile Include="Assets\scripts\test.cs" />
     <Compile Include="Assets\scripts\Timer.cs" />

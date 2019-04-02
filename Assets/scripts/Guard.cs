@@ -31,13 +31,14 @@ public class Guard : MonoBehaviour
 		//Debug.Log ( this.name );
 		
 		
-		//Перекраска клона
+		//Перекраска клона и присвоение ему тэга
 		if ( this.name == "vrag2(Clone)" ) { 
 		//Debug.Log ( this.name );
 		GetComponent<Renderer>().material.SetColor("_Color", Color.green);
+		this.tag = "vragTagClone";
 		}
 		
-		
+		//Debug.Log ( this.tag );
 		
 		/* if ( GameObject = "vrag2(Clone)" ) {
 		
@@ -85,7 +86,7 @@ public class Guard : MonoBehaviour
 		GuardPos = this.transform.position;
 		
 		Speed = rb.velocity.magnitude;
-		Debug.Log ( Speed );
+		//Debug.Log ( Speed );
 
     }
 	

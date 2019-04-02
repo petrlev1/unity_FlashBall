@@ -16,7 +16,7 @@ public class canWin : MonoBehaviour
     {
 		
 		//Определяем отсутствие врагов и расположение игрока для показа выиграша
-		if ( Global.VragList.Length == 0 && Global.Player.transform.position.y < 5 )
+		if ( Global.VragList.Length == 0 && Global.VragListClone.Length == 0 && Global.Player.transform.position.y < 5 )
 		{
 			//Debug.Log ( "You Win" );
 			//Application.LoadLevel(0);

@@ -15,6 +15,18 @@ public class StartGame : MonoBehaviour
    private GameObject vrag2;
    
    
+   private GameObject ToggelAkcel;
+	private GameObject ToggelTuch;
+	Toggle ToggelAkcel2;
+	Toggle ToggelTuch2;
+   
+   private int toggleAkcelKey1;
+	private int toggleSwipeKey1;
+	
+	PlayerControl_Akcel PlayerControl_AkcelScript;
+	PlayerControl_Tuch PlayerControl_TuchScript;
+   
+   
     void Start()
     {	
 		//timer = GameObject.Find("timer");
@@ -31,7 +43,7 @@ public class StartGame : MonoBehaviour
 		TuchLine = GameObject.Find("TuchLine");
 		TuchLine.SetActive(false);
 		
-		//Global.canSetting.SetActive(false);
+		Global.canSetting.SetActive(false);
 		
 		//Vragi = GameObject.Find("vrag2");
 		//Vragi.SetActive(false);
@@ -57,8 +69,69 @@ foreach(GameObject vrag in GameObject.FindGameObjectsWithTag("vragTag"))
 		
 	gameObject.GetComponent<Canvas>().enabled = true;
 	
+	Global.canMainInt.SetActive(false);
+	
+	
+	PlayerControl_AkcelScript = Global.Player.gameObject.GetComponent<PlayerControl_Akcel>();
+	PlayerControl_TuchScript = Global.Player.gameObject.GetComponent<PlayerControl_Tuch>();
+	
+	ToggelAkcel = GameObject.Find("ToggelAkcelStart");
+	ToggelAkcel2 = ToggelAkcel.GetComponent<Toggle>();
+	
+	ToggelTuch = GameObject.Find("ToggelSwipeStart");
+	ToggelTuch2 = ToggelTuch.GetComponent<Toggle>();
+	
+	//Переменная для контроля кнопок управления
+	toggleAkcelKey1 = PlayerPrefs.GetInt("toggleAkcelKey");
+	toggleSwipeKey1 = PlayerPrefs.GetInt("toggleSwipeKey");
+	//Контроль кнопок управления
+	if ( toggleAkcelKey1 == 0 ) {
+			ToggelAkcel2.isOn = false;
+			PlayerControl_AkcelScript.enabled = false;
+		} else { 
+		ToggelAkcel2.isOn = true; 
+		PlayerControl_AkcelScript.enabled = true;
+		}
+		
+	if ( toggleSwipeKey1 == 0 ) {
+			ToggelTuch2.isOn = false;
+			PlayerControl_TuchScript.enabled = false;
+		} else { 
+		ToggelTuch2.isOn = true; 
+		PlayerControl_TuchScript.enabled = true;
+		}
+		
 	  
     }
+	
+	//Управление акселерометром
+	public void Akcel() {
+	
+	//PlayerControl_AkcelScript = Global.Player.gameObject.GetComponent<PlayerControl_Akcel>();
+	//Debug.Log ( toggle.isOn );
+	if ( ToggelAkcel2.isOn == false ) {
+		PlayerPrefs.SetInt("toggleAkcelKey", 0);
+		PlayerControl_AkcelScript.enabled = false;
+		} else { 
+		PlayerPrefs.SetInt("toggleAkcelKey", 1);
+		PlayerControl_AkcelScript.enabled = true;
+		}
+		
+	}
+	
+	//Управление свайпом
+	public void Swipe() {
+	
+	//PlayerControl_TuchScript = Player.gameObject.GetComponent<PlayerControl_Tuch>();
+	//Debug.Log ( toggle.isOn );
+	if ( ToggelTuch2.isOn == false ) {
+		PlayerPrefs.SetInt("toggleSwipeKey", 0);
+		PlayerControl_TuchScript.enabled = false;
+		} else { 
+		PlayerPrefs.SetInt("toggleSwipeKey", 1);
+		PlayerControl_TuchScript.enabled = true;
+		}
+	}
 
     
 	
@@ -85,6 +158,9 @@ foreach ( GameObject vrag in VragiList ) {
 			 //DualTouchControls.SetActive(true);
 			 Global.timer.SetActive(true);
 			 TuchLine.SetActive(true);
+			 Global.canMainInt.SetActive(true);
+			 Global.canSetting.SetActive(true);
+			 
 	}
 	
 	
