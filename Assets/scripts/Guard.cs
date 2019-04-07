@@ -11,10 +11,10 @@ public class Guard : MonoBehaviour
    private Vector3 GuardPos;
    private Rigidbody rb;
    private float Speed;
-   //private Vector3 v3Velocity;
-   //private GameObject vrag2a;
-   //private GameObject vrag2Clone;
-   //private GameObject[] VragiList;
+   
+   //Источник звуков
+	sfx AudioSource;
+	
 
     // Start is called before the first frame update
     void Start()
@@ -73,9 +73,13 @@ public class Guard : MonoBehaviour
 		navmesh.destination = Global.Player.transform.position;
 		
 		//Удаление ненужных объектов
-		if ( transform.position.y < -10  ) {
-		Destroy(gameObject);
+		if ( transform.position.y < -10  ) 
+		{
+			
+		AudioSource = Global.sfx.GetComponent<sfx>();
+	    AudioSource.joke1.Play();
 		
+		Destroy(gameObject);
 		}
 		
 	   

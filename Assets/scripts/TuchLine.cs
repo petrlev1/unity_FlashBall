@@ -31,7 +31,7 @@ public class TuchLine : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 		
 		//lerpedColor = Color.Lerp(Color.green, Color.red, Mathf.Min(Time.time, 1));

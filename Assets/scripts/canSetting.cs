@@ -51,10 +51,10 @@ public class canSetting : MonoBehaviour
 	//PlayerControl_AkcelScript = Global.Player.gameObject.GetComponent<PlayerControl_Akcel>();
 	//Debug.Log ( toggle.isOn );
 	if ( ToggelAkcel2.isOn == false ) {
-		PlayerPrefs.SetInt("toggleAkcelKey", 0);
+		PlayerPrefs.SetInt("toggleAkcelKey", 1);
 		PlayerControl_AkcelScript.enabled = false;
 		} else { 
-		PlayerPrefs.SetInt("toggleAkcelKey", 1);
+		PlayerPrefs.SetInt("toggleAkcelKey", 0);
 		PlayerControl_AkcelScript.enabled = true;
 		}
     }
@@ -65,10 +65,10 @@ public class canSetting : MonoBehaviour
 	//PlayerControl_TuchScript = Player.gameObject.GetComponent<PlayerControl_Tuch>();
 	//Debug.Log ( toggle.isOn );
 	if ( ToggelTuch2.isOn == false ) {
-		PlayerPrefs.SetInt("toggleSwipeKey", 0);
+		PlayerPrefs.SetInt("toggleSwipeKey", 1);
 		PlayerControl_TuchScript.enabled = false;
 		} else { 
-		PlayerPrefs.SetInt("toggleSwipeKey", 1);
+		PlayerPrefs.SetInt("toggleSwipeKey", 0);
 		PlayerControl_TuchScript.enabled = true;
 		}
     }
@@ -83,7 +83,7 @@ public class canSetting : MonoBehaviour
 	toggleSwipeKey1 = PlayerPrefs.GetInt("toggleSwipeKey");
 		
 		//Контроль кнопок управления
-	if ( toggleAkcelKey1 == 0 ) {
+	if ( toggleAkcelKey1 == 1 ) {
 			ToggelAkcel2.isOn = false;
 			PlayerControl_AkcelScript.enabled = false;
 		} else { 
@@ -91,7 +91,7 @@ public class canSetting : MonoBehaviour
 		PlayerControl_AkcelScript.enabled = true;
 		}
 		
-	if ( toggleSwipeKey1 == 0 ) {
+	if ( toggleSwipeKey1 == 1 ) {
 			ToggelTuch2.isOn = false;
 			PlayerControl_TuchScript.enabled = false;
 		} else { 

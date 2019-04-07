@@ -8,31 +8,36 @@ public class canGameOver : MonoBehaviour
 	
 	private GameObject canWin;
 	
+	//Источник звуков
+	sfx AudioSource;
+	
 	void Start()
 	
 	{
 		canWin = GameObject.Find("canWin");
 		Global.canMainInt.SetActive(false);
 	
+	//Звук проигрыша
+		AudioSource = Global.sfx.GetComponent<sfx>();
+	    AudioSource.gameover.Play();
+
+	
 	//scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
 	//Debug.Log ( scoreNum );
 	
 	}
 	
-	void Update()
+	public void GameOverFunc()
 	{
-		
 		if ( Global.Player.transform.position.y < -10  ) {
-		GetComponent<Canvas>().enabled = true;
+		Global.canGameOver.SetActive(true);
+		Global.canGameOver.GetComponent<Canvas>().enabled = true;
 		Global.timer.SetActive(false);
 		Global.Player.SetActive(false);
 		canWin.SetActive(false);
-		
-		}
-		
-	
-		
 	}
+	}
+	
 	
     // Перезагрузка игры
 	public void ReloadGame () 

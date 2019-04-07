@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
@@ -23,13 +24,26 @@ public class StartGame : MonoBehaviour
    private int toggleAkcelKey1;
 	private int toggleSwipeKey1;
 	
+	//private float scoreNum2;
+	
 	PlayerControl_Akcel PlayerControl_AkcelScript;
 	PlayerControl_Tuch PlayerControl_TuchScript;
+	
+	//sfx AudioSource;
    
    
     void Start()
     {	
-		//timer = GameObject.Find("timer");
+	
+	
+	/* PlayerPrefs.SetFloat("scoreNumKey2", 5000f);
+	scoreNum2 = PlayerPrefs.GetFloat("scoreNumKey2");
+	//PlayerPrefs.Save();
+	  Debug.Log ( scoreNum2 ); */
+	  
+	
+	//AudioSource = Global.sfx.GetComponent<sfx>();
+	//AudioSource.victory.Play();
 		
 		
 		canMainInt = GameObject.Find("canMainInt");
@@ -85,7 +99,7 @@ foreach(GameObject vrag in GameObject.FindGameObjectsWithTag("vragTag"))
 	toggleAkcelKey1 = PlayerPrefs.GetInt("toggleAkcelKey");
 	toggleSwipeKey1 = PlayerPrefs.GetInt("toggleSwipeKey");
 	//Контроль кнопок управления
-	if ( toggleAkcelKey1 == 0 ) {
+	if ( toggleAkcelKey1 == 1 ) {
 			ToggelAkcel2.isOn = false;
 			PlayerControl_AkcelScript.enabled = false;
 		} else { 
@@ -93,7 +107,7 @@ foreach(GameObject vrag in GameObject.FindGameObjectsWithTag("vragTag"))
 		PlayerControl_AkcelScript.enabled = true;
 		}
 		
-	if ( toggleSwipeKey1 == 0 ) {
+	if ( toggleSwipeKey1 == 1 ) {
 			ToggelTuch2.isOn = false;
 			PlayerControl_TuchScript.enabled = false;
 		} else { 
@@ -110,10 +124,10 @@ foreach(GameObject vrag in GameObject.FindGameObjectsWithTag("vragTag"))
 	//PlayerControl_AkcelScript = Global.Player.gameObject.GetComponent<PlayerControl_Akcel>();
 	//Debug.Log ( toggle.isOn );
 	if ( ToggelAkcel2.isOn == false ) {
-		PlayerPrefs.SetInt("toggleAkcelKey", 0);
+		PlayerPrefs.SetInt("toggleAkcelKey", 1);
 		PlayerControl_AkcelScript.enabled = false;
 		} else { 
-		PlayerPrefs.SetInt("toggleAkcelKey", 1);
+		PlayerPrefs.SetInt("toggleAkcelKey", 0);
 		PlayerControl_AkcelScript.enabled = true;
 		}
 		
@@ -125,10 +139,10 @@ foreach(GameObject vrag in GameObject.FindGameObjectsWithTag("vragTag"))
 	//PlayerControl_TuchScript = Player.gameObject.GetComponent<PlayerControl_Tuch>();
 	//Debug.Log ( toggle.isOn );
 	if ( ToggelTuch2.isOn == false ) {
-		PlayerPrefs.SetInt("toggleSwipeKey", 0);
+		PlayerPrefs.SetInt("toggleSwipeKey", 1);
 		PlayerControl_TuchScript.enabled = false;
 		} else { 
-		PlayerPrefs.SetInt("toggleSwipeKey", 1);
+		PlayerPrefs.SetInt("toggleSwipeKey", 0);
 		PlayerControl_TuchScript.enabled = true;
 		}
 	}

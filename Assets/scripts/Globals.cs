@@ -15,15 +15,18 @@ public class Global
 	public static GameObject canSetting;
 	public static GameObject canMainInt;
 	public static GameObject CanStart;
+	public static GameObject canWin;
 	public static GameObject canGameOver;
 	public static GameObject DualTouchControls;
+	public static GameObject sfx;
+	//sfx AudioSource;
 	
 }
 
 public class Globals : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 		
 		Global.timer = GameObject.Find("timer");
@@ -33,14 +36,24 @@ public class Globals : MonoBehaviour
 		Global.canSetting = GameObject.Find("canSetting");
 		Global.canMainInt = GameObject.Find("canMainInt");
 		Global.CanStart = GameObject.Find("CanStart");
+		Global.canWin = GameObject.Find("canWin");
+		Global.canWin.SetActive(false);
 		Global.canGameOver = GameObject.Find("canGameOver");
+		Global.canGameOver.SetActive(false);
 		Global.DualTouchControls = GameObject.Find("DualTouchControls");
+		Global.sfx = GameObject.Find("sfx");
 		
 		//Global.canGameOver.SetActive(false);
 		//Debug.Log ( Global.VragList );
-		
         
     }
+	
+	void Start()
+	{
+		
+	//Global.sfx.GetComponent<sfx>().audio_magic1();
+		//Global.canWin.SetActive(true);
+	}
 	
 	void Update()
 	{
@@ -48,8 +61,15 @@ public class Globals : MonoBehaviour
 		Global.VragList = GameObject.FindGameObjectsWithTag("vragTag");
 		Global.VragListClone = GameObject.FindGameObjectsWithTag("vragTagClone");
 		Global.VragClone = GameObject.Find("vrag2(Clone)");
-		
+		//Global.sfx = GameObject.Find("sfx");
 		//Debug.Log ( Global.VragClone );
+		//AudioSource.victory.Play();
+		
+		//Вызываем функцию выигрыша
+		Global.canWin.GetComponent<canWin>().canWinFunc();
+		
+		//Вызываем функцию проигрыша
+		Global.canGameOver.GetComponent<canGameOver>().GameOverFunc();
 		
 	}
 

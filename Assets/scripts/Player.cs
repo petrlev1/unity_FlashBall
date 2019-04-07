@@ -1,17 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
+//using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 
 {
+	//Источник звуков
+	sfx AudioSource;
 	
-	//private GameObject Player;
-	private Rigidbody rb;
-	public int jumpForce = 100;
-	
-	private float Speed;
+	//private float Speed;
 	
 	//public int acceleration;
     //public float force = 10.0f;
@@ -19,8 +17,11 @@ public class Player : MonoBehaviour
     void Start()
     {
 		
-	rb = GetComponent<Rigidbody>();
-	
+	/* AudioSource = Global.sfx.GetComponent<sfx>();
+AudioSource.bump.Play();
+Debug.Log ( "Play" );	 */
+	//rb = GetComponent<Rigidbody>();
+	//Global.sfx.GetComponent<Sfx>().enabled = false;
 	  
     }
 	
@@ -28,12 +29,35 @@ public class Player : MonoBehaviour
     
      void Update()
     {
-		
+		//Global.sfx.SetActive(false);
 		//Vector3 v3Velocity = rb.velocity;
-		Speed = rb.velocity.magnitude;
+		//Speed = rb.velocity.magnitude;
 		//Debug.Log ( "my: " + Speed );
         
-    } 
+    }
+	
+	
+	//Звук при сталкновении
+	private void OnCollisionEnter(Collision collname)
+	{
+		AudioSource = Global.sfx.GetComponent<sfx>();
+		
+		//Звук клонирования
+		if( collname.gameObject.name == "vrag2" ) {
+		AudioSource.bump.Play();
+		}
+		
+		//Звук удара о мяч
+		if( collname.gameObject.name == "vrag2" || collname.gameObject.name == "vrag2(Clone)"  ) {
+		AudioSource.bump2.Play();
+		}
+		
+		//Звук удара о пол
+		if( collname.gameObject.name == "floor100" ) {
+		AudioSource.bumpAll.Play();
+		}
+		
+	}
 	
 	/* void OnCollisionStay()
          {
