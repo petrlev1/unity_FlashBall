@@ -11,12 +11,12 @@ public class Guard : MonoBehaviour
    private Vector3 GuardPos;
    private Rigidbody rb;
    private float Speed;
+   //public int DeadVragNum = 0;
    
    //Источник звуков
 	sfx AudioSource;
 	
 
-    // Start is called before the first frame update
     void Start()
     {
 		
@@ -58,6 +58,9 @@ public class Guard : MonoBehaviour
 {
 	//vrag2CloneRend.material.SetColor("_Color", Color.green);
 } */
+
+//Instantiate(GameObject.Find("vrag2"), new Vector3 (0, 10, 0), transform.rotation);
+//Debug.Log ( "test11" );
         
     }
 
@@ -75,12 +78,22 @@ public class Guard : MonoBehaviour
 		//Удаление ненужных объектов
 		if ( transform.position.y < -10  ) 
 		{
-			
-		AudioSource = Global.sfx.GetComponent<sfx>();
-	    AudioSource.joke1.Play();
 		
+        //Звук
+if ( this.name == "vrag2(Clone)" ) {		
+		AudioSource = Global.sfx.GetComponent<sfx>();
+	    AudioSource.joke1.Play(); 
+} else {
+	AudioSource = Global.sfx.GetComponent<sfx>();
+	AudioSource.joke1Red.Play();
+}
+		
+
+//Удаление объекта
 		Destroy(gameObject);
 		}
+		
+		
 		
 	   
 		//Renderer vrag2CloneRend = vrag2Clone.GetComponent<Renderer>();
@@ -91,13 +104,15 @@ public class Guard : MonoBehaviour
 		
 		Speed = rb.velocity.magnitude;
 		//Debug.Log ( Speed );
+		
+		
 
     }
 	
-	//Столкновение и появление врага;
+	
 	private void OnCollisionEnter(Collision collname)
 {
-	
+	//Столкновение и появление врага;
 		if( collname.gameObject.name == "Player" && gameObject.name == "vrag2"  ) {
 			
 			//vrag2a.SetActive(true);
@@ -116,6 +131,8 @@ public class Guard : MonoBehaviour
 		//Debug.Log ( "COOL" );
 		
 		}
+		
+		if (this.name == "vrag2(Clone)" ) { navmesh.enabled = false; }
 		
 		
 }

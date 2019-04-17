@@ -184,7 +184,7 @@ foreach ( GameObject vrag in VragiList ) {
              vrag.GetComponent<NavMeshAgent>().speed = 6;
 		     vrag.GetComponent<NavMeshAgent>().angularSpeed = 6;
 		     vrag.GetComponent<NavMeshAgent>().acceleration = 6;
-			 Global.vragSpeed = 2f;
+			 Global.vragSpeed = 1f;
 			 }
 	StartGameAll();	 
 	}
@@ -196,7 +196,7 @@ foreach ( GameObject vrag in VragiList ) {
              vrag.GetComponent<NavMeshAgent>().speed = 9;
 		     vrag.GetComponent<NavMeshAgent>().angularSpeed = 9;
 		     vrag.GetComponent<NavMeshAgent>().acceleration = 9;
-			 Global.vragSpeed = 5f;
+			 Global.vragSpeed = 3f;
 			 }
 	StartGameAll();		 
 	}
@@ -208,7 +208,7 @@ foreach ( GameObject vrag in VragiList ) {
              vrag.GetComponent<NavMeshAgent>().speed = 15;
 		     vrag.GetComponent<NavMeshAgent>().angularSpeed = 15;
 		     vrag.GetComponent<NavMeshAgent>().acceleration = 15;
-			 Global.vragSpeed = 10f;
+			 Global.vragSpeed = 5f;
 			 }
 	StartGameAll();		 
 	}

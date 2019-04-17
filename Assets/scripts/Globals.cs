@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Global
 {
+	public static GameObject mCamera;
     public static GameObject timer;
 	public static GameObject Player;
 	public static GameObject[] VragList;
@@ -29,9 +30,9 @@ public class Globals : MonoBehaviour
     void Awake()
     {
 		
+		Global.mCamera = GameObject.Find("mCamera");
 		Global.timer = GameObject.Find("timer");
 		Global.Player = GameObject.Find("Player");
-		Global.Vrag = GameObject.Find("vrag2");
 		//Global.VragList = GameObject.FindGameObjectsWithTag("vragTag");
 		Global.canSetting = GameObject.Find("canSetting");
 		Global.canMainInt = GameObject.Find("canMainInt");
@@ -53,13 +54,19 @@ public class Globals : MonoBehaviour
 		
 	//Global.sfx.GetComponent<sfx>().audio_magic1();
 		//Global.canWin.SetActive(true);
+		
+	//Появление врага каждые n сек
+    InvokeRepeating("newVrag", 0, 8f);	
+		
 	}
+
 	
 	void Update()
 	{
 		
 		Global.VragList = GameObject.FindGameObjectsWithTag("vragTag");
 		Global.VragListClone = GameObject.FindGameObjectsWithTag("vragTagClone");
+		Global.Vrag = GameObject.Find("vrag2");
 		Global.VragClone = GameObject.Find("vrag2(Clone)");
 		//Global.sfx = GameObject.Find("sfx");
 		//Debug.Log ( Global.VragClone );
@@ -69,8 +76,20 @@ public class Globals : MonoBehaviour
 		Global.canWin.GetComponent<canWin>().canWinFunc();
 		
 		//Вызываем функцию проигрыша
+		//Global.canGameOver.GetComponent<canGameOver>().GameOverFunc();
+		//Global.mCamera.GetComponent<functions>().GameOverFunc();
+		//GetComponent<functions>().GameOverFunc();
 		Global.canGameOver.GetComponent<canGameOver>().GameOverFunc();
 		
+		//Debug.Log ( "test" );
+		
+	}
+	
+	//Метод появления врага
+	void newVrag()
+	{
+		GameObject vragNew = Instantiate(Global.Vrag, new Vector3 (0, 2, 0), transform.rotation);
+		vragNew.gameObject.name = "vrag2";
 	}
 
 }

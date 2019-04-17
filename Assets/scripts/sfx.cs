@@ -12,41 +12,15 @@ public class sfx : MonoBehaviour
 	public AudioSource victory;
 	public AudioSource gameover;
 	public AudioSource joke1;
+	public AudioSource joke1Red;
 	
 	AudioSource magic1;
 	
-	//canWin canWin;
-	//sfx AudioSource;
+	//Источник звуков
+	sfx AudioSource;
 	
-    void Start()
-    {
-		
-		//magic1.enabled = true;
-		
-		//GetComponent<AudioSource>().magic1().enabled = true;
-		//GetComponent<AudioSource>().Play();
-		//magic1.Play();
-		//magic1.Play();
-		
-		//victory.Play();
-		
-		//GetComponent<sfx>().victory.Play();
-		//bump1 = this.gameObject.GetComponent<AudioSource>();
-		//victory.Play();
-        
-    }
-	
-	void Update()
-	{
-		/* AudioSource[] audios = GetComponents<AudioSource>();
-		audios[0].enabled = true; */
-	}
 	
 
-	
-	/*    void OnCollisionEnter (Collision coll)
-    {
-		bump.Play();
-    } */
+
 	
 }

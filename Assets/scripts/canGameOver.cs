@@ -27,16 +27,21 @@ public class canGameOver : MonoBehaviour
 	
 	}
 	
-	public void GameOverFunc()
+	void Update()
 	{
-		if ( Global.Player.transform.position.y < -10  ) {
+		//Debug.Log ( Global.VragList.Length );
+	}
+	
+	/* public void GameOverFunc()
+	{
+		if ( Global.Player.transform.position.y < -10 || Global.VragList.Length > 5  ) {
 		Global.canGameOver.SetActive(true);
 		Global.canGameOver.GetComponent<Canvas>().enabled = true;
 		Global.timer.SetActive(false);
 		Global.Player.SetActive(false);
 		canWin.SetActive(false);
 	}
-	}
+	} */
 	
 	
     // Перезагрузка игры
@@ -45,8 +50,31 @@ public class canGameOver : MonoBehaviour
 	
              Application.LoadLevel(0);
 			 //Global.canMainInt.SetActive(true);
-			 //Global.DualTouchControls.SetActive(false);	 
-			 
+			 //Global.DualTouchControls.SetActive(false);	 	 
 	}
+	
+	public void ReloadGameStud100 () 
+	{ 
+	
+             Application.LoadLevel("stud100");
+			 //Global.canMainInt.SetActive(true);
+			 //Global.DualTouchControls.SetActive(false);	 	 
+	}
+	
+	//GameOver
+   public void GameOverFunc()
+	{
+		if ( Global.Player.transform.position.y < -10 || Global.VragList.Length > 30  ) {
+		Global.canGameOver.SetActive(true);
+		Global.canGameOver.GetComponent<Canvas>().enabled = true;
+		Global.timer.SetActive(false);
+		Global.Player.SetActive(false);
+		Global.canWin.SetActive(false);
+		Time.timeScale = 0;
+	}
+	}
+	
+	void OnDisable()
+	{ Time.timeScale = 1f; }
 	
 }

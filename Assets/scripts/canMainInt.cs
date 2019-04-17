@@ -9,6 +9,16 @@ public class canMainInt : MonoBehaviour
 	public GameObject ic_redVrag;
 	public GameObject ic_redVragText;
 	public GameObject flash1;
+	private int ScoreNum = 0;
+	public GameObject Score;
+	
+	
+    void OnGUI()
+	{
+	
+	//Выводи очки на экран
+		 Score.GetComponent<Text>().text = ScoreNum.ToString();
+	}
 	
 	void Awake()
 	{
@@ -24,6 +34,19 @@ public class canMainInt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {	
+	
+	//Подсчет очков скинутых шаров
+	foreach ( GameObject vrag in Global.VragList )
+	{
+		if ( vrag.transform.position.y < -10 ) { ScoreNum += 2; }
+	}
+	
+	foreach ( GameObject vrag in Global.VragListClone )
+	{
+		if ( vrag.transform.position.y < -10 ) { ScoreNum++; }
+	} 
+	
+	//Debug.Log ( ScoreNum += 4 );
 		
 		//Вызываем событие скидывания всех красных мячей
 		if ( Global.VragList.Length == 0 && Global.Player.transform.position.y < 5 )
@@ -38,9 +61,6 @@ public class canMainInt : MonoBehaviour
 		flash1.SetActive(true);
 			
 		} 			
-		
-//Debug.Log ( "Red: " + Global.VragList.Length );
-        
     }
 	
 	//Кнопка настроек
