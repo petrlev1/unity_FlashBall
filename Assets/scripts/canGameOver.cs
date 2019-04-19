@@ -7,19 +7,28 @@ public class canGameOver : MonoBehaviour
 {
 	
 	private GameObject canWin;
+	private GameObject[] VragiList;
+	private GameObject[] VragListClone;
+	public GameObject ScoreText;
 	
 	//Источник звуков
 	sfx AudioSource;
+	
+	void OnGUI()
+	{
+	//Выводим очки на экран
+	ScoreText.GetComponent<Text>().text = PlayerPrefs.GetInt("ScoreNumKey2").ToString();
+	}
 	
 	void Start()
 	
 	{
 		canWin = GameObject.Find("canWin");
-		Global.canMainInt.SetActive(false);
+		//Global.canMainInt.SetActive(false);
 	
-	//Звук проигрыша
+	/* //Звук проигрыша
 		AudioSource = Global.sfx.GetComponent<sfx>();
-	    AudioSource.gameover.Play();
+	    AudioSource.gameover.Play(); */
 
 	
 	//scoreNum = PlayerPrefs.GetFloat("scoreNumKey");
@@ -29,7 +38,24 @@ public class canGameOver : MonoBehaviour
 	
 	void Update()
 	{
-		//Debug.Log ( Global.VragList.Length );
+		
+		VragiList = GameObject.FindGameObjectsWithTag("vragTag");
+		VragListClone = GameObject.FindGameObjectsWithTag("vragTagClone");
+		//Debug.Log ( VragiList.Length );
+		if ( Global.Player.transform.position.y < -10 || VragiList.Length > 15 || VragListClone.Length > 100  ) 
+		{
+		Global.canGameOver.SetActive(true);
+		GetComponent<Canvas>().enabled = true;
+		Global.timer.SetActive(false);
+		Global.Player.SetActive(false);
+		Global.canWin.SetActive(false);
+		Time.timeScale = 0;
+		
+		//Звук проигрыша
+		AudioSource[] audios = Global.sfx.GetComponents<AudioSource>();
+		audios[2].enabled = true;
+		
+	}
 	}
 	
 	/* public void GameOverFunc()
@@ -61,10 +87,11 @@ public class canGameOver : MonoBehaviour
 			 //Global.DualTouchControls.SetActive(false);	 	 
 	}
 	
+	
 	//GameOver
-   public void GameOverFunc()
+   /* public void GameOverFunc()
 	{
-		if ( Global.Player.transform.position.y < -10 || Global.VragList.Length > 30  ) {
+		if ( Global.Player.transform.position.y < -10 || VragiList.Length > 5 || VragListClone.Length > 5  ) {
 		Global.canGameOver.SetActive(true);
 		Global.canGameOver.GetComponent<Canvas>().enabled = true;
 		Global.timer.SetActive(false);
@@ -72,7 +99,7 @@ public class canGameOver : MonoBehaviour
 		Global.canWin.SetActive(false);
 		Time.timeScale = 0;
 	}
-	}
+	} */
 	
 	void OnDisable()
 	{ Time.timeScale = 1f; }

@@ -11,12 +11,14 @@ public class canMainInt : MonoBehaviour
 	public GameObject flash1;
 	private int ScoreNum = 0;
 	public GameObject Score;
+	private GameObject[] VragList;
+	private GameObject CanStart;
 	
 	
     void OnGUI()
 	{
 	
-	//Выводи очки на экран
+	//Выводим очки на экран
 		 Score.GetComponent<Text>().text = ScoreNum.ToString();
 	}
 	
@@ -35,8 +37,12 @@ public class canMainInt : MonoBehaviour
     void Update()
     {	
 	
+	CanStart = GameObject.Find("CanStart2");
+	
+	VragList = GameObject.FindGameObjectsWithTag("vragTag");
+	
 	//Подсчет очков скинутых шаров
-	foreach ( GameObject vrag in Global.VragList )
+	foreach ( GameObject vrag in VragList )
 	{
 		if ( vrag.transform.position.y < -10 ) { ScoreNum += 2; }
 	}
@@ -46,10 +52,10 @@ public class canMainInt : MonoBehaviour
 		if ( vrag.transform.position.y < -10 ) { ScoreNum++; }
 	} 
 	
-	//Debug.Log ( ScoreNum += 4 );
+	PlayerPrefs.SetInt("ScoreNumKey2", ScoreNum);
 		
 		//Вызываем событие скидывания всех красных мячей
-		if ( Global.VragList.Length == 0 && Global.Player.transform.position.y < 5 )
+		if ( VragList.Length == 0 && Global.Player.transform.position.y < 5 && CanStart != true )
 		{
 			//Звуковой эффект из массива AudioSource
 			AudioSource[] audios = Global.sfx.GetComponents<AudioSource>();

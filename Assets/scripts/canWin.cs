@@ -18,12 +18,21 @@ public class canWin : MonoBehaviour
 	Timer timerScript;
 	Text timerText;
 	Text scoreNumText;
+	private GameObject[] VragiList;
+	private GameObject[] VragListClone;
+	public GameObject ScoreText;
+	
+	void OnGUI()
+	{
+	//Выводим очки на экран
+	ScoreText.GetComponent<Text>().text = PlayerPrefs.GetInt("ScoreNumKey2").ToString();
+	}
 	
     void Start()
     {
-		//Звук выигрыша
+		/* //Звук выигрыша
 		AudioSource = Global.sfx.GetComponent<sfx>();
-	    AudioSource.victory.Play();
+	    AudioSource.victory.Play(); */
 		
 		tYouScore = GameObject.Find("tYouScore");
 		tYouScoreText = tYouScore.GetComponent<Text>();
@@ -53,9 +62,28 @@ public class canWin : MonoBehaviour
 		
     }
 	
+	void Update()
+	{
+		VragiList = GameObject.FindGameObjectsWithTag("vragTag");
+		VragListClone = GameObject.FindGameObjectsWithTag("vragTagClone");
+		
+		if ( VragiList.Length == 0 && VragListClone.Length == 0 && Global.Player.transform.position.y < 5 )
+		{
+		//Application.LoadLevel(0);
+	        Global.canWin.SetActive(true);
+			GetComponent<Canvas>().enabled = true;
+			Global.timer.SetActive(false);
+		    Global.Player.SetActive(false);
+			
+			//Звук выигрыша
+			AudioSource[] audios = Global.sfx.GetComponents<AudioSource>();
+		    audios[3].enabled = true;
+		}
+	}
+	
 	
 	//Функция выигрыша
-	public void canWinFunc()
+	/* public void canWinFunc()
 	{
 			if ( Global.VragList.Length == 0 && Global.VragListClone.Length == 0 && Global.Player.transform.position.y < 5 )
 		{
@@ -66,6 +94,6 @@ public class canWin : MonoBehaviour
 		    Global.Player.SetActive(false);
 		}
 			
-	}
+	} */
 	
 }

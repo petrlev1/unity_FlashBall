@@ -16,6 +16,7 @@ public class Global
 	public static GameObject canSetting;
 	public static GameObject canMainInt;
 	public static GameObject CanStart;
+	public static GameObject CanStart2;
 	public static GameObject canWin;
 	public static GameObject canGameOver;
 	public static GameObject DualTouchControls;
@@ -33,18 +34,20 @@ public class Globals : MonoBehaviour
 		Global.mCamera = GameObject.Find("mCamera");
 		Global.timer = GameObject.Find("timer");
 		Global.Player = GameObject.Find("Player");
-		//Global.VragList = GameObject.FindGameObjectsWithTag("vragTag");
+		Global.VragList = GameObject.FindGameObjectsWithTag("vragTag");
 		Global.canSetting = GameObject.Find("canSetting");
 		Global.canMainInt = GameObject.Find("canMainInt");
 		Global.CanStart = GameObject.Find("CanStart");
+		Global.CanStart2 = GameObject.Find("CanStart2");
 		Global.canWin = GameObject.Find("canWin");
 		Global.canWin.SetActive(false);
 		Global.canGameOver = GameObject.Find("canGameOver");
-		Global.canGameOver.SetActive(false);
+		//Global.canGameOver.SetActive(false);
 		Global.DualTouchControls = GameObject.Find("DualTouchControls");
 		Global.sfx = GameObject.Find("sfx");
 		
-		//Global.canGameOver.SetActive(false);
+		Global.CanStart2.SetActive(false);
+		
 		//Debug.Log ( Global.VragList );
         
     }
@@ -52,8 +55,8 @@ public class Globals : MonoBehaviour
 	void Start()
 	{
 		
-	//Global.sfx.GetComponent<sfx>().audio_magic1();
-		//Global.canWin.SetActive(true);
+	Global.CanStart2.SetActive(true);
+
 		
 	//Появление врага каждые n сек
     InvokeRepeating("newVrag", 0, 8f);	
@@ -64,7 +67,7 @@ public class Globals : MonoBehaviour
 	void Update()
 	{
 		
-		Global.VragList = GameObject.FindGameObjectsWithTag("vragTag");
+		//Global.VragList = GameObject.FindGameObjectsWithTag("vragTag");
 		Global.VragListClone = GameObject.FindGameObjectsWithTag("vragTagClone");
 		Global.Vrag = GameObject.Find("vrag2");
 		Global.VragClone = GameObject.Find("vrag2(Clone)");
@@ -73,13 +76,11 @@ public class Globals : MonoBehaviour
 		//AudioSource.victory.Play();
 		
 		//Вызываем функцию выигрыша
-		Global.canWin.GetComponent<canWin>().canWinFunc();
+		//Global.canWin.GetComponent<canWin>().canWinFunc();
 		
 		//Вызываем функцию проигрыша
 		//Global.canGameOver.GetComponent<canGameOver>().GameOverFunc();
-		//Global.mCamera.GetComponent<functions>().GameOverFunc();
-		//GetComponent<functions>().GameOverFunc();
-		Global.canGameOver.GetComponent<canGameOver>().GameOverFunc();
+		
 		
 		//Debug.Log ( "test" );
 		
@@ -91,5 +92,6 @@ public class Globals : MonoBehaviour
 		GameObject vragNew = Instantiate(Global.Vrag, new Vector3 (0, 2, 0), transform.rotation);
 		vragNew.gameObject.name = "vrag2";
 	}
+	
 
 }

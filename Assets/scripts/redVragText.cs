@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class redVragText : MonoBehaviour
 {
     Text text;
+	private GameObject[] VragiList;
 	
     void Start()
     {
@@ -17,8 +18,10 @@ public class redVragText : MonoBehaviour
     void Update()
     {
 		
+		VragiList = GameObject.FindGameObjectsWithTag("vragTag");
+		
 		text = GetComponent<Text>();
-		text.text = Global.VragList.Length.ToString();
+		text.text = VragiList.Length.ToString();
         
     }
 }

@@ -13,6 +13,7 @@ public class sfx : MonoBehaviour
 	public AudioSource gameover;
 	public AudioSource joke1;
 	public AudioSource joke1Red;
+	public AudioSource open1;
 	
 	AudioSource magic1;
 	

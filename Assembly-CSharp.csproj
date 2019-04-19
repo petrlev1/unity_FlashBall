@@ -58,6 +58,7 @@
      <Compile Include="Assets\scripts\canGameOverStudy.cs" />
      <Compile Include="Assets\scripts\canMainInt.cs" />
      <Compile Include="Assets\scripts\canSetting.cs" />
+     <Compile Include="Assets\scripts\CanStart2.cs" />
      <Compile Include="Assets\scripts\canWin.cs" />
      <Compile Include="Assets\scripts\Doors.cs" />
      <Compile Include="Assets\scripts\functions.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\scripts\redVragText.cs" />
      <Compile Include="Assets\scripts\sfx.cs" />
      <Compile Include="Assets\scripts\StartGame.cs" />
+     <Compile Include="Assets\scripts\Stena.cs" />
      <Compile Include="Assets\scripts\test.cs" />
      <Compile Include="Assets\scripts\Timer.cs" />
      <Compile Include="Assets\scripts\TuchLine.cs" />
