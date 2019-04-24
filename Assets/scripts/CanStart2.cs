@@ -16,6 +16,7 @@ public class CanStart2 : MonoBehaviour
 	public GameObject RadioEasy;
 	public GameObject RadioMiddle;
 	public GameObject RadioHard;
+	public GameObject butSetting;
 	
 	sfx AudioSource;
 	
@@ -26,6 +27,7 @@ public class CanStart2 : MonoBehaviour
 		ic_redVrag.SetActive(false);
 		//ic_redVragText.SetActive(false);
 		ic_greenVrag.SetActive(false);
+		butSetting.SetActive(false);
 	}
 
     void Start()
@@ -90,6 +92,7 @@ ic_redVrag.SetActive(true);
 ic_greenVrag.SetActive(true);
 Stena.GetComponent<Stena>().enabled = true;
 Global.canWin.SetActive(true);
+butSetting.SetActive(true);
 
 AudioSource = Global.sfx.GetComponent<sfx>();
 AudioSource.open1.Play();

@@ -65,6 +65,7 @@
      <Compile Include="Assets\scripts\Globals.cs" />
      <Compile Include="Assets\scripts\greenVragText.cs" />
      <Compile Include="Assets\scripts\Guard.cs" />
+     <Compile Include="Assets\scripts\Localization.cs" />
      <Compile Include="Assets\scripts\Player.cs" />
      <Compile Include="Assets\scripts\PlayerControl_Akcel.cs" />
      <Compile Include="Assets\scripts\PlayerControl_Keyboard.cs" />

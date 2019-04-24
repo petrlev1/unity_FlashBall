@@ -74,18 +74,18 @@ public class canGameOver : MonoBehaviour
 	public void ReloadGame () 
 	{ 
 	
-             Application.LoadLevel(0);
+             Application.LoadLevel("102");
 			 //Global.canMainInt.SetActive(true);
 			 //Global.DualTouchControls.SetActive(false);	 	 
 	}
 	
-	public void ReloadGameStud100 () 
+	/* public void ReloadGameStud100 () 
 	{ 
 	
              Application.LoadLevel("stud100");
 			 //Global.canMainInt.SetActive(true);
 			 //Global.DualTouchControls.SetActive(false);	 	 
-	}
+	} */
 	
 	
 	//GameOver

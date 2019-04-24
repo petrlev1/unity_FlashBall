@@ -8,6 +8,7 @@ public class canMainInt : MonoBehaviour
 	
 	public GameObject ic_redVrag;
 	public GameObject ic_redVragText;
+	public GameObject ic_redVragTextMax;
 	public GameObject flash1;
 	private int ScoreNum = 0;
 	public GameObject Score;
@@ -64,6 +65,7 @@ public class canMainInt : MonoBehaviour
 			//Убираем счет красных мячей
 			ic_redVrag.GetComponent<Image>().enabled = false;
 		ic_redVragText.GetComponent<Text>().enabled = false;
+		ic_redVragTextMax.GetComponent<Text>().enabled = false;
 		flash1.SetActive(true);
 			
 		} 			

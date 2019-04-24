@@ -61,7 +61,7 @@ PlayerPrefs.Save();
 		//Если новое время больше - выводим и сохраняем новое
 		if ( timeLeft < scoreNum && Global.Player.transform.position.y > 0 && Global.VragList.Length == 0 && Global.VragListClone.Length == 0 ) { 
 		
-		Debug.Log ( "timeLeft: " + timeLeft );
+		//Debug.Log ( "timeLeft: " + timeLeft );
 		
 		PlayerPrefs.SetFloat("scoreNumKey", timeLeft);
 		PlayerPrefs.Save();

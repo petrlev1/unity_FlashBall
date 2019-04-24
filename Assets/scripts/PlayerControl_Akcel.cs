@@ -31,9 +31,9 @@ public class PlayerControl_Akcel : MonoBehaviour
 
 			//Корректировка чувствительности наклона по y
 			//if (dir.z > -0.57f ) { 
-			if (dir.z > -0.85f ) {
+			 if (dir.z > -0.85f ) {
 			dir.z = dir.z + 0.8f;
-			}
+			} 
 
 			
             if (dir.sqrMagnitude > 1) dir.Normalize();
